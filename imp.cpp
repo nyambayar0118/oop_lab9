@@ -85,7 +85,13 @@ void Employee::setTitle(char* tit){
     title = new char[strlen(tit)+1];
     strcpy(title, tit);
 }
-void Employee::setStartDate()
+void Employee::setStartDate(int y, int m, int d){
+    startDate.setYear(y);
+    startDate.setMonth(m);
+    startDate.setDay(d);  
+}
+
+
 // JobDescription классын гишүүн функцүүд
 
 char* JobDescription::getDescription() {
