@@ -13,4 +13,8 @@ class Person {
     void setName(char* n);
     void setAge(int a);
     void setSSNum(char*);
+
+    //
+    Person();
+    Person(char* n, char* ss, int a);
 };

@@ -120,6 +120,10 @@ Date::Date(int y, int m, int d) {
 Division::Division(char* name) {
     setDivisionName(name);
 }
+//Division destructor
+Division::~Division() {
+    delete[] divisionName;
+}
 
 //Spouse constructor
 Spouse::Spouse(int y,int m,int d){
@@ -127,6 +131,20 @@ Spouse::Spouse(int y,int m,int d){
 }
 //JobDescription constructor
 JobDescription::JobDescription(char* desc) {
-    description = new char[strlen(desc) + 1];
-    strcpy(description, desc);
+    setDescription(desc);
+}
+//JobDescription descturctor
+JobDescription::~JobDescription() {
+    delete[] description;
+}
+//Person constructor
+Person::Person(char* n, char* ss, int a) {
+    setName(n);
+    setSSNum(ss);
+    setAge(a);
+}
+//Person destructor
+Person::~Person() {
+    delete[] name;
+    delete[] SSNum;
 }
