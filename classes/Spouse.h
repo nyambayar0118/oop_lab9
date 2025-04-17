@@ -3,5 +3,5 @@
 
 // Эхнэр/Нөхөр класс
 class Spouse: public Person {
-
+ds;
 };
