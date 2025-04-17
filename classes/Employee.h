@@ -37,4 +37,6 @@ class Employee: public Person {
     void setTitle();
     //компанийн startdate-г авах функц
     void setStartDate();
+    //
+    Employee(char* n, char* ss, int a, char* id, char* tit, int y, int m, int d );
 };
