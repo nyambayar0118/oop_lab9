@@ -12,4 +12,6 @@ class Spouse: public Person {
     Date getAnniversaryDate();
     // Огноог тохируулах функц
     void setAnniversaryDate( int y,int m,int d);
+    // Spouse Конструктор
+    Spouse(int y,int m,int d);
 };

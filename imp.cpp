@@ -106,3 +106,27 @@ void Spouse::setAnniversaryDate(int y, int m, int d) {
     anniversaryDate.setMonth(m);
     anniversaryDate.setDay(d);
 }
+
+//consturctor
+
+//date constructor
+Date::Date(int y, int m, int d) {
+    year = y;
+    month = m;
+    day = d;
+}
+
+//Division parametrtei constructor
+Division::Division(char* name) {
+    setDivisionName(name);
+}
+
+//Spouse constructor
+Spouse::Spouse(int y,int m,int d){
+    Date(y,m,d);
+}
+//JobDescription constructor
+JobDescription::JobDescription(char* desc) {
+    description = new char[strlen(desc) + 1];
+    strcpy(description, desc);
+}
