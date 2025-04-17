@@ -6,4 +6,6 @@ class Child: public Person {
 
     char* getFavoriteToy();
     void setFavoriteToy(char* toy);
+    Child(char* n, char* ss, int a, char* t);
+    ~Child();
 };

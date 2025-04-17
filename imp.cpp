@@ -90,8 +90,6 @@ void Employee::setStartDate(int y, int m, int d){
     startDate.setMonth(m);
     startDate.setDay(d);  
 }
-
-
 // JobDescription классын гишүүн функцүүд
 
 char* JobDescription::getDescription() {
@@ -179,4 +177,13 @@ Person::Person(char* n, char* ss, int a) {
 Person::~Person() {
     delete[] name;
     delete[] SSNum;
+}
+
+//Child contructor
+Child::Child(char* n, char* ss, int a, char* t) :Person(n,ss,a) {
+setFavoriteToy(t);
+}
+//Child destructor
+Child::~Child(){
+    delete[] favoriteToy;
 }
