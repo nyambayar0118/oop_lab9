@@ -1,4 +1,11 @@
 // Албан тушаал класс
-class JobDescription {
-    
+class JobDescription
+{
+    // Албан тушаалын тодорхойлолт гишүүн өгөгдөл
+    char *description;
+    // гишүүн функцууд
+    // албан тушаалын тодорхойлолтыг буцаах функц
+    char *getDescription();
+    // албан тушаалын тодорхойлолтыг тохируулах функц
+    void setDescription();
 };
