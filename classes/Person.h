@@ -10,7 +10,7 @@ class Person {
     char* getSSNum();
     int getAge();
 
-    void setName(char*);
-    void setAge(int);
+    void setName(char* n);
+    void setAge(int a);
     void setSSNum(char*);
 };

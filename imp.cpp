@@ -11,7 +11,13 @@
 using namespace std;
 
 // Child классын гишүүн функцүүд
-
+char* Child::getFavoriteToy() {
+    return favoriteToy;
+}
+void Child::setFavoriteToy(char* toy) {
+    favoriteToy = new char[strlen(toy) + 1];
+    strcpy(favoriteToy, toy);
+}
 // Date классын гишүүн функцүүд
 
 // Division классын гишүүн функцүүд
