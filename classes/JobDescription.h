@@ -9,5 +9,5 @@ class JobDescription
     public:
     char *getDescription();
     // албан тушаалын тодорхойлолтыг тохируулах функц
-    void setDescription();
+    void setDescription(char* desc);
 };

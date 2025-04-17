@@ -5,5 +5,5 @@ class Child: public Person {
     char* favoriteToy;
 
     char* getFavoriteToy();
-    void setFavoriteToy();
+    void setFavoriteToy(char* toy);
 };
