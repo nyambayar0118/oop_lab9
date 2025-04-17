@@ -20,6 +20,27 @@ void Child::setFavoriteToy(char* toy) {
 }
 // Date классын гишүүн функцүүд
 
+//get function
+int Date::getYear() {
+    return year;
+}
+int Date::getMonth() {
+    return month;
+}
+int Date::getDay() {
+    return day;
+}
+//set function
+void Date::setYear(int y) {
+    year = y;
+}
+void Date::setMonth(int m) {
+    month = m;
+}
+void Date::setDay(int d) {
+    day = d;
+}
+
 // Division классын гишүүн функцүүд
 
 //get function
