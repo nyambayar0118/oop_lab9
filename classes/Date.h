@@ -15,4 +15,6 @@ class Date {
     void setDay(int);
 
     void printDate();
+    Date(int y, int m, int d);
+    Date();
 };

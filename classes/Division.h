@@ -11,4 +11,6 @@ class Division
     char *getDivisionName();
     // хэлтэсийн нэрийг тохируулах функц
     void setDivisionName(char *name);
+    //Division классын конструктор
+    Division(char* name);
 };

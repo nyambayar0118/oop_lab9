@@ -20,6 +20,26 @@ void Child::setFavoriteToy(char* toy) {
 }
 // Date классын гишүүн функцүүд
 
+//get function
+int Date::getYear() {
+    return year;
+}
+int Date::getMonth() {
+    return month;
+}
+int Date::getDay() {
+    return day;
+}
+//set function
+void Date::setYear(int y) {
+    year = y;
+}
+void Date::setMonth(int m) {
+    month = m;
+}
+void Date::setDay(int d) {
+    day = d;
+}
 // Division классын гишүүн функцүүд
 
 //get function
@@ -38,7 +58,34 @@ void Division::setDivisionName(char* name) {
 char* Employee::getCompanyID() {
     return companyID;
 }
-
+char* Employee::getTitle(){
+    return title;
+}
+Date Employee::getStartDate(){
+    return startDate;
+}
+Spouse* Employee::getSpouse{
+    return Spouse;
+}
+vector<Child*> Employee::getChildren(){
+    return children;
+}
+vector<JobDescription*> Employee::getjds(){
+    return jds;
+}
+Division* Employee::getDiv(){
+    return div;
+}
+//set function
+void Employee::setCompanyID(char* id){
+    companyID = new char[strlen(id)+1];
+    strcpy(companyID, id);
+}
+void Employee::setTitle(char* tit){
+    title = new char[strlen(tit)+1];
+    strcpy(title, tit);
+}
+void Employee::setStartDate()
 // JobDescription классын гишүүн функцүүд
 
 char* JobDescription::getDescription() {
@@ -84,4 +131,46 @@ void Spouse::setAnniversaryDate(int y, int m, int d) {
     anniversaryDate.setYear (y);
     anniversaryDate.setMonth(m);
     anniversaryDate.setDay(d);
+}
+
+//consturctor
+
+//date constructor
+Date::Date(int y, int m, int d) {
+    year = y;
+    month = m;
+    day = d;
+}
+
+//Division parametrtei constructor
+Division::Division(char* name) {
+    setDivisionName(name);
+}
+//Division destructor
+Division::~Division() {
+    delete[] divisionName;
+}
+
+//Spouse constructor
+Spouse::Spouse(int y,int m,int d){
+    Date(y,m,d);
+}
+//JobDescription constructor
+JobDescription::JobDescription(char* desc) {
+    setDescription(desc);
+}
+//JobDescription descturctor
+JobDescription::~JobDescription() {
+    delete[] description;
+}
+//Person constructor
+Person::Person(char* n, char* ss, int a) {
+    setName(n);
+    setSSNum(ss);
+    setAge(a);
+}
+//Person destructor
+Person::~Person() {
+    delete[] name;
+    delete[] SSNum;
 }

@@ -10,4 +10,6 @@ class JobDescription
     char *getDescription();
     // албан тушаалын тодорхойлолтыг тохируулах функц
     void setDescription(char* desc);
+    // JobDescription классын конструктор
+    JobDescription(char* desc);
 };
