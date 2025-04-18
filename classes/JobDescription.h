@@ -1,3 +1,6 @@
+#ifndef JOBDESCRIPTION_H
+#define JOBDESCRIPTION_H
+
 // Албан тушаал класс
 class JobDescription
 {
@@ -12,4 +15,6 @@ class JobDescription
     void setDescription(char* desc);
     // JobDescription классын конструктор
     JobDescription(char* desc);
+    ~JobDescription();
 };
+#endif

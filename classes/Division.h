@@ -1,3 +1,7 @@
+#ifndef DIVISION_H
+#define DIVISION_H
+
+
 // Ажлын хэлтэс класс
 class Division
 {
@@ -13,4 +17,6 @@ class Division
     void setDivisionName(char *name);
     //Division классын конструктор
     Division(char* name);
+    ~Division();
 };
+#endif

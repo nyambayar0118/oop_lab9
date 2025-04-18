@@ -1,3 +1,6 @@
+#ifndef SPOUSE_H
+#define SPOUSE_H
+
 #include "Person.h"
 #include "Date.h"
 
@@ -17,3 +20,4 @@ class Spouse: public Person {
     // Spouse Конструктор
     Spouse(int y,int m,int d);
 };
+#endif

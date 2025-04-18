@@ -1,6 +1,16 @@
-#include "Person.h"
-#include "Date.h"
+#ifndef EMPLOYEE_H
+#define EMPLOYEE_H
 
+#include "Person.h"
+#include "Spouse.h"
+#include "Division.h"
+#include "JobDescription.h"
+#include "Child.h"
+#include "lib.h"
+#include "Date.h"
+#include <vector>
+
+using namespace std;
 // Ажилтан класс
 class Employee: public Person {
     //гишүүн өгөгдөлүүд
@@ -32,11 +42,16 @@ class Employee: public Person {
     //компанийн div-г тохируулах функц
     Division* getDiv();
     //компанийн id-г авах функц
-    void setCompanyID();
+    void setCompanyID(char* id);
     //компанийн title-г авах функц
-    void setTitle();
+    void setTitle(char* tit);
     //компанийн startdate-г авах функц
-    void setStartDate();
+    void setStartDate(int y, int m, int d);
+    void setDivisionName(char *name);
+    void setSpouse(Spouse* s);
     //
     Employee(char* n, char* ss, int a, char* id, char* tit, int y, int m, int d );
+    ~Employee();
 };
+
+#endif

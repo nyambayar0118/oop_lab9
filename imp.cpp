@@ -109,7 +109,7 @@ Date Employee::getStartDate()
 {
     return startDate;
 }
-Spouse *Employee::getSpouse()
+Spouse* Employee::getSpouse()
 {
     return Spouse;
 }
@@ -143,6 +143,9 @@ void Employee::setStartDate(int y, int m, int d)
     startDate.setMonth(m);
     startDate.setDay(d);
 }
+void Employee::setSpouse(Spouse* s) {
+    so = s;
+}
 Employee::Employee(char *n, char *ss, int a, char *id, char *tit, int y, int m, int d) : Person(n, ss, a)
 {
     setCompanyID(id);
@@ -152,7 +155,7 @@ Employee::Employee(char *n, char *ss, int a, char *id, char *tit, int y, int m, 
 Employee::~Employee() {
     delete[] companyID;
     delete[] title;
-    delete spouse;
+    delete so;
     for (auto child : children) delete child;
     for (auto jd : jds) delete jd;
 }

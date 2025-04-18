@@ -1,3 +1,6 @@
+#ifndef DATE_H
+#define DATE_H
+
 // Огноо класс
 class Date {
     protected:
@@ -18,3 +21,4 @@ class Date {
     Date(int y, int m, int d);
     Date();
 };
+#endif

@@ -1,3 +1,6 @@
+#ifndef PERSON_H
+#define PERSON_H
+
 // Хүн класс
 class Person {
     protected:
@@ -14,7 +17,8 @@ class Person {
     void setAge(int a);
     void setSSNum(char*);
 
-    //
     Person();
     Person(char* n, char* ss, int a);
+    ~Person();
 };
+#endif
