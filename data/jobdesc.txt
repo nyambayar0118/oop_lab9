@@ -1,6 +1,6 @@
-5
-Ajiltany burduulelt surgalt hudulmuriin hariltsaag zohitsuulna
-Baiguullagiin uil ajillagaag tuluvluh zohion baiguula udirdana
-Suljee teknik hangamj program hangamjiin demjleg uzuulne
-Web site khogjuulj zasvar uilchilgee saijruulalt hiine
-Suraltsaj medlegee gunzgiiruulen ur chadvaraa hogjuulne
+2
+Ajiltany_burduulelt_surgalt_hudulmuriin_hariltsaag_zohitsuulna
+Baiguullagiin_uil_ajillagaag_tuluvluh_zohion_baiguula_udirdana
+Suljee_teknik_hangamj_program_hangamjiin_demjleg_uzuulne
+Web_site_khogjuulj_zasvar_uilchilgee_saijruulalt_hiine
+Suraltsaj_medlegee_gunzgiiruulen_ur_chadvaraa_hogjuulne

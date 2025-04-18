@@ -36,9 +36,9 @@ class Employee: public Person {
     //компанийн spouse-г тохируулах функц
     Spouse* getSpouse();
     //компанийн children-г тохируулах функц
-    vector<Child*> getChildren();
+    vector<Child*>& getChildren();
     //компанийн jds-г тохируулах функц
-    vector<JobDescription*> getjds();
+    vector<JobDescription*>& getjds();
     //компанийн div-г тохируулах функц
     Division* getDiv();
     //компанийн id-г авах функц
@@ -47,11 +47,12 @@ class Employee: public Person {
     void setTitle(char* tit);
     //компанийн startdate-г авах функц
     void setStartDate(int y, int m, int d);
-    void setDivisionName(char *name);
+    void setDivision(Division* name);
     void setSpouse(Spouse* s);
     //
     Employee(char* n, char* ss, int a, char* id, char* tit, int y, int m, int d );
     ~Employee();
+    void print();
 };
 
 #endif

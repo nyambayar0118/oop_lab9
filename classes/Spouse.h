@@ -18,6 +18,6 @@ class Spouse: public Person {
     // Огноог тохируулах функц
     void setAnniversaryDate( int y,int m,int d);
     // Spouse Конструктор
-    Spouse(int y,int m,int d);
+    Spouse(int y, int m, int d, char *n, char *ss, int a);
 };
 #endif

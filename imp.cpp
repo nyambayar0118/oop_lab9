@@ -30,9 +30,6 @@ Child::~Child()
     delete[] favoriteToy;
 }
 
-
-
-
 // Date классын гишүүн функцүүд
 int Date::getYear()
 {
@@ -58,17 +55,18 @@ void Date::setDay(int d)
 {
     day = d;
 }
+Date::Date()
+{
+    year = 0;
+    month = 0;
+    day = 0;
+};
 Date::Date(int y, int m, int d)
 {
     year = y;
     month = m;
     day = d;
 }
-
-
-
-
-
 
 // Division классын гишүүн функцүүд
 char *Division::getDivisionName()
@@ -90,12 +88,6 @@ Division::~Division()
     delete[] divisionName;
 }
 
-
-
-
-
-
-
 // Employee классын гишүүн функцүүд
 char *Employee::getCompanyID()
 {
@@ -109,15 +101,15 @@ Date Employee::getStartDate()
 {
     return startDate;
 }
-Spouse* Employee::getSpouse()
+Spouse *Employee::getSpouse()
 {
-    return Spouse;
+    return so;
 }
-vector<Child *> Employee::getChildren()
+vector<Child *> &Employee::getChildren()
 {
     return children;
 }
-vector<JobDescription *> Employee::getjds()
+vector<JobDescription *> &Employee::getjds()
 {
     return jds;
 }
@@ -143,8 +135,13 @@ void Employee::setStartDate(int y, int m, int d)
     startDate.setMonth(m);
     startDate.setDay(d);
 }
-void Employee::setSpouse(Spouse* s) {
+void Employee::setSpouse(Spouse *s)
+{
     so = s;
+}
+void Employee::setDivision(Division *name)
+{
+    this->div = div;
 }
 Employee::Employee(char *n, char *ss, int a, char *id, char *tit, int y, int m, int d) : Person(n, ss, a)
 {
@@ -152,17 +149,56 @@ Employee::Employee(char *n, char *ss, int a, char *id, char *tit, int y, int m, 
     setTitle(tit);
     setStartDate(y, m, d);
 }
-Employee::~Employee() {
+Employee::~Employee()
+{
     delete[] companyID;
     delete[] title;
     delete so;
-    for (auto child : children) delete child;
-    for (auto jd : jds) delete jd;
 }
+void Employee::print()
+{
+    cout << endl
+         << "Name: " << name << endl;
+    cout << "SSN: " << SSNum << endl;
+    cout << "Age: " << age << endl;
+    cout << "Company ID: " << companyID << endl;
+    cout << "Title: " << title << endl;
+    cout << "Start Date: " << startDate.getYear() << "-"
+         << startDate.getMonth() << "-"
+         << startDate.getDay() << endl;
 
+    if (div)
+    {
+        cout << "Division: " << div->getDivisionName() << endl;
+    }
 
+    if (so)
+    {
+        cout << "Spouse Name: " << so->getName() << endl;
+        cout << "Spouse SSN: " << so->getSSNum() << endl;
+        cout << "Spouse Age: " << so->getAge() << endl;
+        Date anniv = so->getAnniversaryDate();
+        cout << "Anniversary Date: " << anniv.getYear() << "-"
+             << anniv.getMonth() << "-" << anniv.getDay() << endl;
+    }
 
+    cout << "Children:" << endl;
+    for (int i = 0; i < children.size(); ++i)
+    {
+        Child *child = children[i];
+        cout << "\tName: " << child->getName()
+             << ", SSN: " << child->getSSNum()
+             << ", Age: " << child->getAge()
+             << ", Favorite Toy: " << child->getFavoriteToy() << endl;
+    }
 
+    cout << "Job Descriptions:" << endl;
+    for (int i = 0; i < jds.size(); ++i)
+    {
+        JobDescription *jd = jds[i];
+        cout << "\t" << jd->getDescription() << endl;
+    }
+}
 
 // JobDescription классын гишүүн функцүүд
 char *JobDescription::getDescription()
@@ -183,10 +219,6 @@ JobDescription::~JobDescription()
 {
     delete[] description;
 }
-
-
-
-
 
 // Person классын гишүүн функцүүд
 char *Person::getName()
@@ -217,6 +249,12 @@ void Person::setSSNum(char *ss)
     SSNum = new char[strlen(ss) + 1];
     strcpy(SSNum, ss);
 }
+Person::Person()
+{
+    setName(NULL);
+    setSSNum(NULL);
+    setAge(-1);
+}
 Person::Person(char *n, char *ss, int a)
 {
     setName(n);
@@ -229,12 +267,6 @@ Person::~Person()
     delete[] SSNum;
 }
 
-
-
-
-
-
-
 // Spouse классын гишүүн функцүүд
 Date Spouse::getAnniversaryDate()
 {
@@ -246,7 +278,7 @@ void Spouse::setAnniversaryDate(int y, int m, int d)
     anniversaryDate.setMonth(m);
     anniversaryDate.setDay(d);
 }
-Spouse::Spouse(int y, int m, int d)
+Spouse::Spouse(int y, int m, int d, char *n, char *ss, int a) : Person(n, ss, a)
 {
     setAnniversaryDate(y, m, d);
 }

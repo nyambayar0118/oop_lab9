@@ -65,12 +65,12 @@ Person <|-- Spouse
 Person <|-- Child
 Person <|-- Employee
 
-Employee "1" o-- "0..1" Spouse 
-Employee "1" o-- "0..n" Child
+Employee o--> "0..1" Spouse 
+Employee o--> "0..n" Child
 
-Employee "n" --> "1" Division 
-Employee "n" o--> "1..n" JobDescription
+Employee --> "1" Division 
+Employee o--> "1..n" JobDescription
 
-Spouse "n" o--> "1" Date
-Employee "n" o--> "1" Date
+Spouse *--> "1" Date
+Employee *--> "1" Date
 @enduml
