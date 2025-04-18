@@ -1,0 +1,76 @@
+@startuml
+class Date {
+#year: int
+#month: int
+#day: int
+}
+
+class Person {
+#name: *char
+#SSNum: *char
+#age: int
+
++getName(): *char
++getSSNum(): *char
++getAge(): int
++setName(): void
++setSSNum(): void
++setAge(): void
+}
+
+class Spouse {
+#anniversaryDate: Date
+
++getAnniversaryDate(): Date
++setAnniversaryDate(): void
+}
+
+class Child {
+#favoriteToy: *char
+
++getFavoriteToy(): *char
++setFavoriteToy(): void
+}
+
+class Employee {
+#companyID: *char
+#title: *char
+#startDate: Date
+
++getCompanyID(): *char
++getTitle(): *char
++getStartDate(): Date
++setCompanyID(): void
++setTitle(): void
++setStartDate(): void
+}
+
+class Division {
+#divisionName: *char
+
++getDivisionName(): *char
++setDivisionName(): void
+}
+
+class JobDescription {
+#description: *char
+
++getDescription(): *char
++setDescription(): void
+}
+
+
+
+Person <|-- Spouse
+Person <|-- Child
+Person <|-- Employee
+
+Employee "1" o-- "0..1" Spouse 
+Employee "1" o-- "0..n" Child
+
+Employee "n" --> "1" Division 
+Employee "n" o--> "1..n" JobDescription
+
+Spouse "n" o--> "1" Date
+Employee "n" o--> "1" Date
+@enduml
